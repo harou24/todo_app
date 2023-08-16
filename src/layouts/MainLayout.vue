@@ -19,12 +19,10 @@
       </q-toolbar>
       <div class="q-px-lg q-pt-xl q-mb-md">
         <div class="text-h3">
-          <div class="text-subtitle1">{{ todaysDate }}</div>
+          <div class="text-subtitle1" >{{ todaysDate }}</div>
         </div>
       </div>
-      <q-img src="cover2.jpg" style="height: 192px"
-        class="header-image absolute-top"
-      />
+      <q-img class="header-image absolute-top" src="cover2.jpg" style="height: 192px"/>
     </q-header>
 
     <q-drawer
@@ -38,47 +36,27 @@
           <q-list padding>
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="inbox" />
+                <q-icon name="list" />
               </q-item-section>
 
               <q-item-section>
-                Inbox
+                Todo
               </q-item-section>
             </q-item>
-
-            <q-item active clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="star" />
-              </q-item-section>
-
-              <q-item-section>
-                Star
-              </q-item-section>
-            </q-item>
-
             <q-item clickable v-ripple>
               <q-item-section avatar>
-                <q-icon name="send" />
+                <q-icon name="help" />
               </q-item-section>
 
               <q-item-section>
-                Send
+                Help
               </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple>
-              <q-item-section avatar>
-                <q-icon name="drafts" />
-              </q-item-section>
-
-              <q-item-section>
-                Drafts
-              </q-item-section>
-            </q-item>
           </q-list>
         </q-scroll-area>
 
-        <q-img class="absolute-top" src="https://cdn.quasar.dev/img/material.png" style="height: 150px">
+        <q-img class="absolute-top" src="https://cdn.quasar.dev/img/material.png" style="height: 192px">
           <div class="absolute-bottom bg-transparent">
             <q-avatar size="56px" class="q-mb-sm">
               <img src="https://cdn.quasar.dev/img/boy-avatar.png">
@@ -89,14 +67,15 @@
         </q-img>
       </q-drawer>
     <q-page-container>
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </q-page-container>
   </q-layout>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
-import EssentialLink from 'components/EssentialLink.vue';
 
 import { date } from 'quasar';
 
