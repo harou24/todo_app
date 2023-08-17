@@ -1,6 +1,6 @@
 <template>
-  <q-page class="flex flex-center">
-    <h5>
+  <q-page class="q-pa-lg">
+    <h5 q-mt-none>
       Todo
     </h5>
   </q-page>
