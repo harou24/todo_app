@@ -6,12 +6,12 @@
       bordered
       >
       <q-item
-      v-for="task in tasks"
-      :key="task.title"
-      clickable
-      @click="task.done = !task.done"
-      :class="{'done': task.done}"
-      v-ripple>
+        v-for="task in tasks"
+        :key="task.title"
+        clickable
+        @click="task.done = !task.done"
+        :class="{'done': task.done}"
+        v-ripple>
         <q-item-section avatar>
           <q-checkbox
             v-model="task.done"
