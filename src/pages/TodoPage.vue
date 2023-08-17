@@ -6,7 +6,7 @@
       bordered
       >
       <q-item
-        v-for="task in tasks"
+        v-for="(task, index) in tasks"
         :key="task.title"
         clickable
         @click="task.done = !task.done"
@@ -26,6 +26,7 @@
           side
         >
           <q-btn
+            @click.stop="deleteTask(index)"
             flat
             round
             color="primary"
@@ -37,8 +38,15 @@
 </template>
 
 <script lang="ts">
+import { Dialog } from 'quasar';
+import { defineComponent } from 'vue';
 
-export default {
+interface Task {
+  title: string;
+  done: boolean;
+}
+
+export default defineComponent({
   data() {
     return {
       tasks: [
@@ -54,10 +62,22 @@ export default {
           title: 'Poo bananas',
           done: false,
         },
-      ],
+      ] as Task[],
     };
   },
-};
+  methods: {
+    deleteTask(index: number) {
+      Dialog.create({
+        title: 'Confirm',
+        message: 'Are you sure?',
+        cancel: true,
+        persistent: true,
+      }).onOk(() => {
+        this.tasks.splice(index, 1);
+      });
+    },
+  },
+});
 </script>
 
 <style lang="scss">
