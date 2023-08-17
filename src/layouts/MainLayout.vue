@@ -22,7 +22,7 @@
           <div class="text-subtitle1" >{{ todaysDate }}</div>
         </div>
       </div>
-      <q-img class="header-image absolute-top" src="cover2.jpg" style="height: 192px"/>
+      <q-img class="header-image absolute-top" src="cover.jpg" style="height: 192px"/>
     </q-header>
 
     <q-drawer
