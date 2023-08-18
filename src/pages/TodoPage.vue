@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts">
-import { Dialog } from 'quasar';
+import { Dialog, Notify } from 'quasar';
 import { defineComponent } from 'vue';
 
 interface Task {
@@ -69,11 +69,12 @@ export default defineComponent({
     deleteTask(index: number) {
       Dialog.create({
         title: 'Confirm',
-        message: 'Are you sure?',
+        message: 'Are you sure ?',
         cancel: true,
         persistent: true,
       }).onOk(() => {
         this.tasks.splice(index, 1);
+        Notify.create({ message: 'Task deleted successfully!' });
       });
     },
   },
