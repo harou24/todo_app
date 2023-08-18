@@ -1,5 +1,26 @@
 <template>
   <q-page class="bg-grey-3 column">
+    <div class="row q-pa-sm bg-primary">
+      <q-input
+        v-model="newTask"
+        @keyup.enter="addTask"
+        class="col"
+        square
+        filled
+        bg-color="white"
+        placeholder="Add task"
+        danse>
+
+        <template v-slot:append>
+          <q-btn
+            @click="addTask"
+            round
+            dense
+            flat
+            icon="add"/>
+        </template>
+      </q-input>
+    </div>
     <q-list
       class="bg-white"
       separator
@@ -49,19 +70,9 @@ interface Task {
 export default defineComponent({
   data() {
     return {
+      newTask: '',
       tasks: [
-        {
-          title: 'Get bananas',
-          done: false,
-        },
-        {
-          title: 'Eat bananas',
-          done: false,
-        },
-        {
-          title: 'Poo bananas',
-          done: false,
-        },
+
       ] as Task[],
     };
   },
@@ -76,6 +87,13 @@ export default defineComponent({
         this.tasks.splice(index, 1);
         Notify.create({ message: 'Task deleted successfully!' });
       });
+    },
+    addTask() {
+      this.tasks.push({
+        title: this.newTask,
+        done: false,
+      });
+      this.newTask = '';
     },
   },
 });
