@@ -79,6 +79,7 @@ interface Task {
 }
 
 export default defineComponent({
+  name: 'TodoPage',
   data() {
     return {
       newTask: '',
