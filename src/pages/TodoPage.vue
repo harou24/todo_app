@@ -55,6 +55,17 @@
         </q-item-section>
       </q-item>
     </q-list>
+    <div
+      v-if="!tasks.length"
+      class="no-tasks absolute-center">
+      <q-icon
+        name="check"
+        size="100px"
+        color="primary"/>
+      <div class="text-h5 text-primary text-center">
+        No Tasks
+      </div>
+    </div>
   </q-page>
 </template>
 

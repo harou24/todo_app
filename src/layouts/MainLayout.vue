@@ -10,17 +10,10 @@
           aria-label="Menu"
           @click="toggleLeftDrawer"
         />
-
-        <q-toolbar-title>
-          Hello world
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
       <div class="q-px-lg q-pt-xl q-mb-md">
-        <div class="text-h3">
+        <div class="text-h3">Todo</div>
           <div class="text-subtitle1" >{{ todaysDate }}</div>
-        </div>
       </div>
       <q-img class="header-image absolute-top" src="cover.jpg" style="height: 192px"/>
     </q-header>
