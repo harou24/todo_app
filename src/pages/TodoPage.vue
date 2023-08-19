@@ -72,11 +72,7 @@
 <script lang="ts">
 import { Dialog, Notify } from 'quasar';
 import { defineComponent } from 'vue';
-
-interface Task {
-  title: string;
-  done: boolean;
-}
+import { Task } from '../interface';
 
 export default defineComponent({
   name: 'TodoPage',
